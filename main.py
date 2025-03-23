@@ -1,16 +1,16 @@
 from typing import List
 
+# naive approach using substring principle
+
 
 class Solution:
     def countPrefixSuffixPairs(self, words: List[str]) -> int:
         counter = 0
-        for i in range(len(words)):
-            currWord = words[i]
-            j = i + 1
-            while (j < len(words)):
-                if self.isPrefixAndSuffix(currWord, words[j]):
+        length = len(words)
+        for i in range(length):
+            for j in range(i + 1, length):
+                if self.isPrefixAndSuffix(words[i], words[j]):
                     counter += 1
-                j += 1
         return counter
 
     def isPrefixAndSuffix(self, word1, word2):
