@@ -1,5 +1,12 @@
+from typing import List
+
+from collections import Counter
+# use counter from dictionary
 
 
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def singleNumber(self, nums: List[int]) -> int:
+        counter = Counter(nums)
+        for key, val in counter.items():
+            if val == 1:
+                return key
