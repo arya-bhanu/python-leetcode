@@ -1,5 +1,6 @@
+from typing import List
 
 
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def missingNumber(self, nums: List[int]) -> int:
+        return sum(x for x in range(len(nums) + 1)) - sum(nums)
