@@ -9,7 +9,11 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(
+            "()()()", self.solution.removeOuterParentheses("(()())(())"))
+        self.assertEqual(
+            "()()()()(())", self.solution.removeOuterParentheses("(()())(())(()(()))"))
+        self.assertEqual("", self.solution.removeOuterParentheses("()()"))
 
 
 if __name__ == "__main__":

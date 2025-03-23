@@ -1,5 +1,3 @@
-
-
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def removeOuterParentheses(self, s: str) -> str:
+        return
