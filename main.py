@@ -1,12 +1,15 @@
 from typing import List
 
 from collections import Counter
-# use counter from dictionary
+# XOR operator, so powerful
+# anyting XOR with 0 will be that own value
+# anything XOR with itself (same value) will be 0
+# XOR is accosiative a ^ (b ^ c) == a ^ b ^ c == (a ^ b) ^ c
 
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
-        counter = Counter(nums)
-        for key, val in counter.items():
-            if val == 1:
-                return key
+        x = 0
+        for i in nums:
+            x = x ^ i
+        return x
