@@ -8,8 +8,9 @@ class TestSolution(unittest.TestCase):
         self.solution = Solution()
         return super().setUp()
 
-    def test_isPrefix(self):
-        self.assertEqual(0, self.solution.testMethod())
+    def test_start(self):
+        self.assertEqual(2, self.solution.findNumbers([12, 345, 2, 6, 7896]))
+        self.assertEqual(1, self.solution.findNumbers([555, 901, 482, 1771]))
 
 
 if __name__ == "__main__":
