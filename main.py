@@ -1,1 +1,5 @@
-print("This is (main) first python program for leetcode")
+
+
+class Solution:
+    def testMethod(self) -> int:
+        return 0
