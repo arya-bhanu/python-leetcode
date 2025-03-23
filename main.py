@@ -1,5 +1,13 @@
 
 
+from typing import List
+
+
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def countNegatives(self, grid: List[List[int]]) -> int:
+        counter = 0
+        for i in grid:
+            for j in i:
+                if j < 0:
+                    counter += 1
+        return counter
