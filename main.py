@@ -1,13 +1,15 @@
 from typing import List
 
-# use naive approach
+# you can use filter like, or map like equivalent with list comprehension in python
 
+
+# in js
+# function buildArray(nums){
+#     return nums.map((_,index)=>nums[nums[index]])
+# }
 
 def buildArray(nums: List[int]) -> List[int]:
-    container = []
-    for i in range(len(nums)):
-        container.append(nums[nums[i]])
-    return container
+    return [nums[nums[x]] for x in range(len(nums))]
 
 
 print(buildArray([0, 2, 1, 5, 3, 4]))
