@@ -9,7 +9,8 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual([], self.solution.findPeaks([2, 4, 4]))
+        self.assertEqual([1, 3], self.solution.findPeaks([1, 4, 3, 8, 5]))
 
 
 if __name__ == "__main__":
