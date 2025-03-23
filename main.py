@@ -1,16 +1,10 @@
 from typing import List
 
 
-# naive approach like other language such: java, js
+# one liner
 class Solution:
     def maximumWealth(self, accounts: List[List[int]]) -> int:
-        max = 0
-        for lists in accounts:
-            counter = 0
-            for w in lists:
-                counter += w
-            max = counter if counter > max else max
-        return max
+        return max(sum(x) for x in accounts)
 
 
 sol = Solution()
