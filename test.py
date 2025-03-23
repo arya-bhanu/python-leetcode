@@ -8,7 +8,7 @@ class TestSolution(unittest.TestCase):
         self.solution = Solution()
         return super().setUp()
 
-    def test_isPrefix(self):
+    def test_start(self):
         self.assertEqual(0, self.solution.testMethod())
 
 
