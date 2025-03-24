@@ -1,22 +1,14 @@
 from typing import List
 
-# use some kinds of permutation, find the possible iteration
-# use bruteforce
-# 3 loop of bruteforce
+# if it strictly increasing and unique
 
 
 class Solution:
     def arithmeticTriplets(self, nums: List[int], diff: int) -> int:
-        i = 0
         counter = 0
-        while i < len(nums) - 2:
-            j = i + 1
-            while j < len(nums) - 1:
-                k = j + 1
-                while k < len(nums):
-                    if nums[j] - nums[i] == diff and nums[k] - nums[j] == diff:
-                        counter += 1
-                    k += 1
-                j += 1
-            i += 1
+        sets = set()
+        for num in nums:
+            if num - diff in sets and num - diff * 2 in sets:
+                counter += 1
+            sets.add(num)
         return counter
