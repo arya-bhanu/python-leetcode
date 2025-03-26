@@ -9,7 +9,12 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual([1, 0, 0, 1, 3], self.solution.duplicateZeros(
+            [1, 0, 1, 3, 4]))
+        # self.assertEqual([1, 0, 0, 2, 3, 0, 0, 4], self.solution.duplicateZeros(
+        #     [1, 0, 2, 3, 0, 4, 5, 0]))
+        # self.assertEqual([1, 2, 3], self.solution.duplicateZeros(
+        #     [1, 2, 3]))
 
 
 if __name__ == "__main__":
