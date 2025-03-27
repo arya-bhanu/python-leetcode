@@ -9,7 +9,10 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(
+            True, self.solution.canMakeArithmeticProgression([3, 5, 1]))
+        self.assertEqual(
+            False, self.solution.canMakeArithmeticProgression([1, 2, 4]))
 
 
 if __name__ == "__main__":
