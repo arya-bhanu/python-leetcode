@@ -9,7 +9,10 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(
+            [0, 0, 1, 1], self.solution.transformArray([4, 3, 2, 1]))
+        self.assertEqual(
+            [0, 0, 1, 1, 1], self.solution.transformArray([1, 5, 1, 4, 2]))
 
 
 if __name__ == "__main__":

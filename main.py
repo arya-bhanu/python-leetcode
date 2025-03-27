@@ -1,5 +1,12 @@
+from typing import List
 
 
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def transformArray(self, nums: List[int]) -> List[int]:
+        for i in range(len(nums)):
+            if nums[i] % 2 == 0:
+                nums[i] = 0
+            else:
+                nums[i] = 1
+        nums.sort()
+        return nums
