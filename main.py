@@ -6,11 +6,24 @@ from typing import List
 
 class Solution:
     def findKthPositive(self, arr: List[int], k: int) -> int:
-        sets = set(arr)
-        counter = 0
-        i = 1
-        while (counter is not k):
-            if i not in sets:
-                counter += 1
-            i += 1
-        return i - 1
+        first = arr[0]
+
+        # opening
+        if first is not 1:
+            if first - 1 >= k:
+                return k
+            else:
+                k -= first - 1
+        for i in range(len(arr) - 1):
+            j = i + 1
+            diff = arr[j] - arr[i] - 1
+            if diff > 0:
+                if k - diff > 0:
+                    k -= diff
+                else:
+                    return arr[i] + k
+
+        # closing
+        if k > 0:
+            return arr[-1] + k
+        return
