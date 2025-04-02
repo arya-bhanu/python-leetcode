@@ -9,7 +9,9 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual("s'teL ekat edoCteeL tsetnoc", self.solution.reverseWords(
+            "Let's take LeetCode contest"))
+        self.assertEqual("rM gniD", self.solution.reverseWords("Mr Ding"))
 
 
 if __name__ == "__main__":
