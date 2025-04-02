@@ -7,28 +7,26 @@ class Solution:
     def leftRightDifference(self, nums: List[int]) -> List[int]:
         result = []
 
-        def prefixsum(arr: List[int]) -> List[int]:
-            prev = 0
-            res = []
-            res.append(prev)
-            for i in range(len(arr) - 1):
-                calc = arr[i] + prev
-                res.append(calc)
-                prev = calc
-            return res
+        prefixed = []
+        suffixed = []
 
-        def suffixsum(arr: List[int]) -> List[int]:
-            prev = 0
-            res = []
-            res.append(prev)
-            for i in range(len(arr) - 1, 0, -1):
-                calc = arr[i] + prev
-                res.append(calc)
-                prev = calc
-            return res[::-1]
+        prevPref = 0
+        postSuff = 0
 
-        prefixed = prefixsum(nums)
-        suffixed = suffixsum(nums)
+        prefixed.append(prevPref)
+        suffixed.append(postSuff)
+
+        for i in range(len(nums) - 1):
+            calcPrev = prevPref + nums[i]
+            prefixed.append(calcPrev)
+            prevPref = calcPrev
+
+            j = len(nums) - 1 - i
+            calcPost = postSuff + nums[j]
+            suffixed.append(calcPost)
+            postSuff = calcPost
+
+        suffixed = suffixed[::-1]
 
         if (len(prefixed) == len(suffixed)):
             for i in range(len(prefixed)):
