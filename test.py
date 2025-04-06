@@ -9,7 +9,9 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual([1, 1, 3], self.solution.minOperations("110"))
+        self.assertEqual([11, 8, 5, 4, 3, 4],
+                         self.solution.minOperations("001011"))
 
 
 if __name__ == "__main__":
