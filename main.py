@@ -1,24 +1,31 @@
 from typing import List
 
 
-# naive
+# faster with prefix suffix
 class Solution:
-    def minOperations(self, boxes: str) -> List[int]:
-        res = [0] * len(boxes)
+    def minOperations(self, a: str) -> List[int]:
+        lenA = len(a)
 
-        # go right
-        for i in range(len(boxes)):
-            if boxes[i] == "1" and i != len(boxes) - 1:
-                counter = 1
-                for j in range(i + 1, len(boxes)):
-                    res[j] = res[j] + counter
-                    # print(res)
-                    counter += 1
-        # go left
-        for i in range(len(boxes) - 1, -1, -1):
-            if boxes[i] == "1" and i != 0:
-                counter = 1
-                for j in range(i - 1, -1, -1):
-                    res[j] = res[j] + counter
-                    counter += 1
-        return res
+        ansR = [0] * lenA
+        ansL = [0] * lenA
+
+        finalAns = []
+
+        # left
+        ballCount = 0
+        for i in range(lenA - 1, 0, -1):
+            if a[i] == "1":
+                ballCount += 1
+            ansL[i - 1] = ansL[i] + ballCount
+
+        # right
+        ballCount = 0
+        for i in range(0, lenA - 1):
+            if a[i] == "1":
+                ballCount += 1
+            ansR[i + 1] = ansR[i] + ballCount
+            finalAns.append(ansR[i] + ansL[i])
+
+        finalAns.append(ansR[-1])
+
+        return finalAns
