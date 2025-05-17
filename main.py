@@ -1,35 +1,19 @@
 from typing import List
 
-# accepted but very slow
+# accepted but very fast
+# higher memory used
 
 
 class Solution:
     def sortArrayByParityII(self, nums: List[int]) -> List[int]:
-        def isEven(num: int):
-            return num % 2 == 0
-        for i in range(len(nums)):
-            if isEven(i):
-                if isEven(nums[i]):
-                    continue
-                else:
-                    j = i + 1
-                    while j < len(nums):
-                        if isEven(nums[j]):
-                            temp = nums[j]
-                            nums[j] = nums[i]
-                            nums[i] = temp
-                            break
-                        j += 1
+        result = [0] * len(nums)
+        even_index = 0
+        odd_index = 1
+        for num in nums:
+            if num % 2 == 0:
+                result[even_index] = num
+                even_index += 2
             else:
-                if not isEven(nums[i]):
-                    continue
-                else:
-                    j = i + 1
-                    while j < len(nums):
-                        if not isEven(nums[j]):
-                            temp = nums[j]
-                            nums[j] = nums[i]
-                            nums[i] = temp
-                            break
-                        j += 1
-        return nums
+                result[odd_index] = num
+                odd_index += 2
+        return result
