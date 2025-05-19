@@ -1,5 +1,18 @@
+from typing import List
 
+
+# very easy, use more memory
 
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        left = []
+        right = []
+        mid = []
+        for num in nums:
+            if num < pivot:
+                left.append(num)
+            elif num == pivot:
+                mid.append(num)
+            else:
+                right.append(num)
+        return left + mid + right
