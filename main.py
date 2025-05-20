@@ -1,6 +1,6 @@
 from typing import List
 
-# works but time limit execeded
+# works now
 
 
 class Solution:
@@ -9,9 +9,7 @@ class Solution:
         for i in range(len(pref)):
             if i == 0:
                 res.append(pref[0])
-            else:
-                finalOp = pref[i]
-                for op in res:
-                    finalOp = finalOp ^ op
-                res.append(finalOp)
+                continue
+            j = i - 1
+            res.append(pref[i] ^ pref[j])
         return res
