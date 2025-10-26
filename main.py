@@ -1,5 +1,3 @@
-
-
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def defangIPaddr(self, address: str) -> str:
+        return address.replace(".", "[.]")
