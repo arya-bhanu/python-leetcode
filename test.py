@@ -9,7 +9,18 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(
+            "this is a secret",
+            self.solution.decodeMessage(
+                "the quick brown fox jumps over the lazy dog", "vkbs bs t suepuv"
+            ),
+        )
+        self.assertEqual(
+            "the five boxing wizards jump quickly",
+            self.solution.decodeMessage(
+                "eljuxhpwnyrdgtqkviszcfmabo", "zwx hnfx lqantp mnoeius ycgk vcnjrdb"
+            ),
+        )
 
 
 if __name__ == "__main__":
