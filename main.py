@@ -1,8 +1,15 @@
-class Solution:
-    def scoreOfString(self, s: str) -> int:
-        total = 0
-        for i in range(len(s) - 1):
-            j = i + 1
-            total += abs(ord(s[i]) - ord(s[j]))
+from typing import List
 
-        return total
+
+class Solution:
+    def sumZero(self, n: int) -> List[int]:
+        loop = n // 2
+        i = 1
+        res = []
+        while i <= loop:
+            res.append(i)
+            res.append(-i)
+            i += 1
+        if n % 2 != 0:
+            res.append(0)
+        return res

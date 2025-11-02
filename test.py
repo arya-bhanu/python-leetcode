@@ -9,8 +9,8 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(13, self.solution.scoreOfString("hello"))
-        self.assertEqual(50, self.solution.scoreOfString("zaz"))
+        self.assertEqual(13, self.solution.sumZero("hello"))
+        self.assertEqual(50, self.solution.sumZero("zaz"))
 
 
 if __name__ == "__main__":
