@@ -9,7 +9,7 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(0, self.solution.middleNode())
 
 
 if __name__ == "__main__":

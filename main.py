@@ -1,5 +1,19 @@
+# Definition for singly-linked list.
+from typing import Optional
+
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        # tortoise and hare algorithm
+        hare = head
+        tortoise = head
+        while hare and hare.next:
+            tortoise = tortoise.next
+            hare = hare.next.next
+        return tortoise
