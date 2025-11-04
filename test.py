@@ -9,7 +9,9 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual("efcfe", self.solution.makeSmallestPalindrome("egcfe"))
+        self.assertEqual("abba", self.solution.makeSmallestPalindrome("abcd"))
+        self.assertEqual("neven", self.solution.makeSmallestPalindrome("seven"))
 
 
 if __name__ == "__main__":
