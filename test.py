@@ -9,7 +9,16 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(
+            [0, 1], self.solution.findWordsContaining(["leet", "code"], "e")
+        )
+        self.assertEqual(
+            [0, 2],
+            self.solution.findWordsContaining(["abc", "bcd", "aaaa", "cbc"], "a"),
+        )
+        self.assertEqual(
+            [], self.solution.findWordsContaining(["abc", "bcd", "aaaa", "cbc"], "z")
+        )
 
 
 if __name__ == "__main__":
