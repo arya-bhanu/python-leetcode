@@ -1,5 +1,10 @@
+from typing import List
 
 
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def minimumOperations(self, nums: List[int]) -> int:
+        counter = 0
+        for num in nums:
+            if num % 3 != 0:
+                counter += 1
+        return counter
