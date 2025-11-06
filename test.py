@@ -10,20 +10,12 @@ class TestSolution(unittest.TestCase):
 
     def test_start(self):
         self.assertEqual(
-            [2, 1], self.solution.findIntersectionValues([2, 3, 2], [1, 2])
+            ["Mary", "Emma", "John"],
+            self.solution.sortPeople(["Mary", "John", "Emma"], [180, 165, 170]),
         )
         self.assertEqual(
-            [3, 4],
-            self.solution.findIntersectionValues([4, 3, 2, 3, 1], [2, 2, 5, 2, 3, 6]),
-        )
-        self.assertEqual(
-            [0, 0], self.solution.findIntersectionValues([3, 4, 2, 3], [1, 5])
-        )
-        self.assertEqual(
-            [4, 2],
-            self.solution.findIntersectionValues(
-                [24, 28, 7, 27, 7, 27, 9, 24, 9, 10], [12, 29, 9, 7, 5]
-            ),
+            ["Bob", "Alice", "Bob"],
+            self.solution.sortPeople(["Alice", "Bob", "Bob"], [155, 185, 150]),
         )
 
 
