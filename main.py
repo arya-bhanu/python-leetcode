@@ -1,5 +1,12 @@
+from typing import List
 
 
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def alternatingSum(self, nums: List[int]) -> int:
+        sum = 0
+        for i in range(len(nums)):
+            if i % 2 == 0:
+                sum += nums[i]
+                continue
+            sum += nums[i] * -1
+        return sum

@@ -9,7 +9,8 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(-4, self.solution.alternatingSum([1, 3, 5, 7]))
+        self.assertEqual(100, self.solution.alternatingSum([100]))
 
 
 if __name__ == "__main__":
