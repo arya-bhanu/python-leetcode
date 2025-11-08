@@ -1,5 +1,6 @@
-
-
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def checkIfPangram(self, sentence: str) -> bool:
+        sets = set()
+        for s in sentence:
+            sets.add(s)
+        return len(sets) == 26

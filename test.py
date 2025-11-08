@@ -9,7 +9,10 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(
+            True, self.solution.checkIfPangram("thequickbrownfoxjumpsoverthelazydog")
+        )
+        self.assertEqual(False, self.solution.checkIfPangram("leetcode"))
 
 
 if __name__ == "__main__":
