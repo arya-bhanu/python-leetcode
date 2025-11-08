@@ -9,7 +9,10 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(
+            2, self.solution.uniqueMorseRepresentations(["gin", "zen", "gig", "msg"])
+        )
+        self.assertEqual(1, self.solution.uniqueMorseRepresentations(["a"]))
 
 
 if __name__ == "__main__":
