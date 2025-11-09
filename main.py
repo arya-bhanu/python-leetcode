@@ -1,5 +1,6 @@
+from typing import List
 
 
 class Solution:
-    def testMethod(self) -> int:
-        return 0
+    def subsetXORSum(self, nums: List[int]) -> int:
+        return
