@@ -9,7 +9,8 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(0, self.solution.groupThePeople())
+        self.assertEqual(0, self.solution.groupThePeople())
 
 
 if __name__ == "__main__":
