@@ -9,7 +9,11 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(0, self.solution.testMethod())
+        self.assertEqual(5, self.solution.lengthOfLastWord("Hello World"))
+        self.assertEqual(
+            4, self.solution.lengthOfLastWord("   fly me   to   the moon  ")
+        )
+        self.assertEqual(6, self.solution.lengthOfLastWord("luffy is still joyboy"))
 
 
 if __name__ == "__main__":
