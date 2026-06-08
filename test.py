@@ -9,9 +9,13 @@ class TestSolution(unittest.TestCase):
         return super().setUp()
 
     def test_start(self):
-        self.assertEqual(5, self.solution.findLHS([1, 3, 2, 2, 5, 2, 3, 7]))
-        self.assertEqual(2, self.solution.findLHS([1, 2, 3, 4]))
-        self.assertEqual(0, self.solution.findLHS([1, 1, 1, 1]))
+        self.assertEqual(
+            [0, 2, 3, 4],
+            self.solution.findThePrefixCommonArray([1, 3, 2, 4], [3, 1, 2, 4]),
+        )
+        self.assertEqual(
+            [0, 1, 3], self.solution.findThePrefixCommonArray([2, 3, 1], [3, 1, 2])
+        )
 
 
 if __name__ == "__main__":
